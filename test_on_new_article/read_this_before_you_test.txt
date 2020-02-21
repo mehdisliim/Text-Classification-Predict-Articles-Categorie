@@ -1,0 +1,4 @@
+Hi!, just to let you know the model is trained on BBC news articles so it's better to test on
+the recent news of BBC. I've test the model on BBC news recent articles on Politics,
+Technologie, Entertainment, Sports and Businesses and the predictions were Good whereas
+when I tested it on other articles from NYTimes and CNN it made a few missclassfication.
