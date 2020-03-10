@@ -4,10 +4,13 @@ import pandas as pd, numpy as np, os
 from keras.preprocessing.text import text_to_word_sequence
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.corpus import stopwords
+import pathlib
 stopwords = stopwords.words('english')
-os.chdir('/Users/mehdi/Downloads/TextClassification/test_on_new_article/model_and_transformers/')
+main_path = str(pathlib.Path().absolute())
+main_path = main_path[:main_path.index('test_on_new_article')]
+os.chdir(main_path+'test_on_new_article/model_and_transformers/')
 ohot_enc, vectorizer, model = load('OneHotEncoder.SKLEARN'), load('CountVectorizer.SKLEARN'), load_model('model.KERAS')
-os.chdir('/Users/mehdi/Downloads/TextClassification/test_on_new_article/')
+os.chdir(main_path+'test_on_new_article/')
 def predict(article_name='insert_the_article_text_here.txt'):
     try:
         sent = open(article_name).read().replace('\n', ' ')
